@@ -25,12 +25,13 @@ SECRET_KEY = 'h_o7qair_vbl*4u*f)@a0s%ie0808zlm#d!&xx2n-+()k=dyrh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.russellmolimock.tech', '34.67.169.209', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.russellmolimock.tech', '34.67.169.209', 'localhost', '127.0.0.1', 'https://russellmolimock.tech', 'http://34.67.169.209', 'https://34.67.169.209', 'russellmolimock.tech', 'www.russellmolimock.tech', '0.0.0.0', '0.0.0.0:8000']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'poll_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'poll_app/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
