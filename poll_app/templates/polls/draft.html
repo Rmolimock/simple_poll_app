@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Create a Question{% endblock %}
+{% block content %}
+<a class="mb-3 btn btn-secondary" href="{% url 'polls:index' %}">Back To Polls</a>
+<!--<h1 class="text-center mb-3">Create a Question</h1>-->
+
+<form class="mb-5 lead card" action="{% url 'polls:add_question' %}" method="post">
+{% csrf_token %}
+  <input type="text" name="question_text" placeholder="ex: What is your favorite food?">
+<ul class="list-group mb-5" id="choices_form">
+    <li class="list-group-item">
+      <label>Choice:</label>
+      <input class="choice" type="text" name="choice_text0"></input>
+    </li>
+    <li class="list-group-item">
+      <label>Choice:</label>
+      <input class="choice" type="text" name="choice_text1"></input>
+    </li>
+
+</ul>
+  <div class="btn btn-success" id="create_choice">create choice</div>
+<input type="submit" id="submit">
+</form>
+{% endblock %}
