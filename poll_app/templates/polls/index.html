@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Polls App{% endblock %}
 {% block content %}
-  <a href="{% url 'polls:draft' %}" class="float-right btn btn-primary btn-sm">Add Question</a>
+<a href="{% url 'polls:draft' %}" class="float-right btn btn-primary btn-sm">Add Question</a>
   <h1 class="text-center mb-3">Poll Questions</h1>
   {% if latest_question_list %}
     {% for question in latest_question_list %}
